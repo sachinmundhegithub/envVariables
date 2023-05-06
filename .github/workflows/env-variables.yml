@@ -3,13 +3,13 @@ name: test-env
 on:
   push:
   workflow_dispatch:
- 
-env:
-  envVar: "global value"
 
 jobs:
   job1:
+    env:
+      envVar: "job value"
     runs-on: ubuntu-latest
+    
     steps:
     - name: job1-step-1
       run: echo  $envVar
@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: job2-step-1
-      run: echo  $envVar      
+      run: echo $envVar      
      
