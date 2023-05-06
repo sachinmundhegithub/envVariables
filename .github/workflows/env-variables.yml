@@ -1,0 +1,22 @@
+
+name: env
+
+on:
+  push:
+  workflow_dispatch:
+ 
+env:
+  envVar: "global value"
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: job1-step-1
+      run: echo  $envVar
+ job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: job2-step-1
+      run: echo  $envVar      
+     
